@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxo Admin - Login / Sign Up</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css"> <!-- Admin specific styling -->
+    <link rel="stylesheet" href="auth.css">  <!-- General auth styling -->
+    <style>
+        /* Small overrides for admin auth page to make it stand out or fit admin theme */
+        body { 
+            background-color: var(--admin-bg-primary); 
+        }
+        .auth-card {
+            background-color: var(--admin-bg-secondary);
+            border-color: var(--admin-card-border);
+        }
+        .input-group input {
+            background-color: var(--admin-bg-tertiary);
+            border-color: var(--admin-border);
+        }
+        .logo-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo" style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;">
+                <i class="ph-fill ph-aperture" style="color: var(--color-accent); font-size: 48px;"></i>
+                <span class="logo-text">Voxo <span class="badge admin-badge" style="font-size:14px; padding: 4px 10px;">Admin</span></span>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Admin Log In</button>
+                <button class="tab-btn" data-tab="signup">Admin Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active-form">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Admin Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Access Dashboard</button>
+                <div class="auth-message error" id="loginError"></div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signupForm" class="auth-form">
+                <div class="input-group">
+                    <input type="email" id="signupEmail" placeholder="Admin Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" placeholder="Secure Password" required minlength="6">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="signupUsername" placeholder="Admin Username" required>
+                </div>
+                <button type="submit" class="auth-submit-btn">Create Admin Account</button>
+                <div class="auth-message error" id="signupError"></div>
+                <div class="auth-message success" id="signupSuccess"></div>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Authorized personnel only. Access is tracked and monitored.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabaseClient.js"></script>
+    <script src="admin-auth.js"></script>
+</body>
+</html>

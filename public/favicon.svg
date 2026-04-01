@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="skipseeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#8b5cf6" />
+      <stop offset="100%" stopColor="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="url(#skipseeGrad)" />
+  <path d="M 32 72 L 68 50 L 32 28 Z" fill="#ffffff" />
+  <path d="M 58 72 L 94 50 L 58 28 Z" fill="rgba(255, 255, 255, 0.7)" />
+</svg>
